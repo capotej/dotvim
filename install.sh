@@ -1,4 +1,5 @@
 #!/bin/sh
 
-ln -sf ./.vim ~/.vim
-ln -sf ./.vimrc ~/.vimrc
+export pwd=`pwd`
+ln -sf $pwd/.vim ~/.vim
+ln -sf $pwd/.vimrc ~/.vimrc
