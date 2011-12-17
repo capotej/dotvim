@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
@@ -19,6 +21,7 @@ set smartcase                   " ... unless they contain at least one capital l
 
 "" Mappings
 let g:ctrlp_map = '<c-p>'
+imap ;; <Esc>
 
 "" Macvim
 set guioptions-=T
@@ -28,3 +31,14 @@ let g:loaded_netrwPlugin = 1
 "" Tweaks
 set nu "line numbers
 set hid "stops bitching when files havent saved
+
+
+" windows and splits
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>l <ESC>:vsp .<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+filetype plugin on
+set ofu=syntaxcomplete#Complete
