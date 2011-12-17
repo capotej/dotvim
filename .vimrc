@@ -19,6 +19,8 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 
+runtime macros/matchit.vim
+
 "" Mappings
 let g:ctrlp_map = '<c-p>'
 imap ;; <Esc>
