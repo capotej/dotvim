@@ -1,5 +1,8 @@
 call pathogen#infect()
 
+" map leader to ,
+let mapleader = ","
+
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
@@ -18,7 +21,6 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-
 runtime macros/matchit.vim
 
 "" Mappings
@@ -34,6 +36,7 @@ let g:loaded_netrwPlugin = 1
 set nu "line numbers
 set hid "stops bitching when files havent saved
 
+inoremap jj <ESC>
 
 " windows and splits
 nnoremap <leader>w <C-w>v<C-w>l
@@ -44,3 +47,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 filetype plugin on
 set ofu=syntaxcomplete#Complete
+
+
+:highlight Search ctermbg=none ctermfg=white cterm=underline
