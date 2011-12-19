@@ -8,6 +8,13 @@ syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
+set autoindent
+set showmode
+set hidden
+set cursorline
+set ttyfast
+set ruler
+set laststatus=2
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -20,6 +27,9 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+set showmatch
+nnoremap / /\v
+vnoremap / /\v
 
 runtime macros/matchit.vim
 
@@ -48,5 +58,17 @@ nnoremap <C-l> <C-w>l
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
-
+" sane highlighting
 :highlight Search ctermbg=none ctermfg=white cterm=underline
+
+" training wheel removal, disable arrow keys for all contexts
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
