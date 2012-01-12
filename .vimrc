@@ -79,3 +79,10 @@ set shell=/bin/zsh
 " reload .vimrc
 nnoremap <leader>sv :so $MYVIMRC<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+
+" vimrc.local
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+endif
