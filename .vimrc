@@ -72,3 +72,10 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
+
+" rvm support
+set shell=/bin/zsh
+
+" reload .vimrc
+nnoremap <leader>sv :so $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
