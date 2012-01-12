@@ -1,8 +1,5 @@
 call pathogen#infect()
 
-" map leader to ,
-let mapleader = ","
-
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
