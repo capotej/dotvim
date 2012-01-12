@@ -61,18 +61,6 @@ set ofu=syntaxcomplete#Complete
 " sane highlighting
 :highlight Search ctermbg=none ctermfg=white cterm=underline
 
-" training wheel removal, disable arrow keys for all contexts
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
-
 " rvm support
 set shell=/bin/zsh
 
