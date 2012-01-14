@@ -13,3 +13,4 @@ folder '.vim/bundle/vim-textobj-user', 'https://github.com/kana/vim-textobj-user
 folder '.vim/bundle/vimerl', 'https://github.com/oscarh/vimerl.git'
 folder '.vim/bundle/vim-powerline', 'https://github.com/Lokaltog/vim-powerline.git'
 folder '.vim/bundle/vim-syntastic', 'https://github.com/scrooloose/syntastic.git'
+folder '.vim/bundle/vim-conque', 'https://github.com/rson/vim-conque.git'
