@@ -15,4 +15,3 @@ folder '.vim/bundle/vim-powerline', 'https://github.com/Lokaltog/vim-powerline.g
 folder '.vim/bundle/vim-syntastic', 'https://github.com/scrooloose/syntastic.git'
 folder '.vim/bundle/vim-conque', 'https://github.com/rson/vim-conque.git'
 folder '.vim/bundle/vim-scala', 'https://github.com/derekwyatt/vim-scala.git'
-folder '.vim/bundle/vim-latex', 'https://github.com/kevinstreit/VIM-Latex.git'
