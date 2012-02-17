@@ -1,80 +1,72 @@
-call pathogen#infect()
+**neocomplcache**
+=================
 
-set nocompatible                " choose no compatibility with legacy vi
-syntax enable
-set encoding=utf-8
-set showcmd                     " display incomplete commands
-filetype plugin indent on       " load file type plugins + indentation
-set autoindent
-set showmode
-set hidden
-set cursorline
-set ttyfast
-set ruler
-set laststatus=2
+Description
+-----------
 
-"" Whitespace
-set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
-set expandtab                   " use spaces, not tabs (optional)
-set backspace=indent,eol,start  " backspace through everything in insert mode
+Neocomplcache performs keyword completion by making a cache of keywords in
+a buffer. I implemented it because unlike the Vim builtin keyword completion.
+Neocomplcache can be customized flexibly. Unfortunately neocomplcache may use
+more memory than other plugins.
 
-"" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
-set showmatch
-nnoremap / /\v
-vnoremap / /\v
+Installation
+============
 
-runtime macros/matchit.vim
+* Extract the file and Put files in your Vim directory
+   (usually ~/.vim/ or Program Files/Vim/vimfiles on Windows).
+* Execute `|:NeoComplCacheEnable|` command or
+`let g:neocomplcache_enable_at_startup = 1`
+in your .vimrc.
 
-"" Mappings
-let g:ctrlp_map = '<c-p>'
-imap ;; <Esc>
+Caution
+-------
 
-"" Macvim
-set guioptions-=T
-set guifont=Menlo\ Regular:h19
-let g:loaded_netrwPlugin = 1
+Because all variable names are changed in neocomplcache Ver.5, it is not
+backwards compatible. If you want to upgrade, you should use the following
+script from Mr.thinca.
 
-"" Tweaks
-set nu "line numbers
-set hid "stops bitching when files havent saved
+http://gist.github.com/422503
 
-inoremap jj <ESC>
+Snippets feature(snippets\_complete source) was splitted from Ver.7.
+If you used it, please install snippets\_complete source manually.
 
-" windows and splits
-nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <leader>l <ESC>:vsp .<CR>
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-filetype plugin on
-set ofu=syntaxcomplete#Complete
+https://github.com/Shougo/neocomplcache-snippets-complete
 
-" sane highlighting
-:highlight Search ctermbg=none ctermfg=white cterm=underline
+Screen shots
+============
 
-" rvm support
-set shell=/bin/zsh
+Quick match
+-----------
+![Quick match.](http://3.bp.blogspot.com/_ci2yBnqzJgM/TD1PeahCmOI/AAAAAAAAADc/Rz_Pbpr92z4/s1600/quick_match.png)
 
-" reload .vimrc
-nnoremap <leader>sv :so $MYVIMRC<cr>
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+Snippet completion like snipMate.
+---------------------------------
+http://3.bp.blogspot.com/_ci2yBnqzJgM/SfkgaHXLS0I/AAAAAAAAAA4/TmaylpFl_Uw/s1600-h/screenshot2.png
+![Snippet completion like snipMate.](http://3.bp.blogspot.com/_ci2yBnqzJgM/SfkgaHXLS0I/AAAAAAAAAA4/TmaylpFl_Uw/s1600-h/screenshot2.png)
 
-" vimrc.local
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
+Original filename completion.
+-----------
+![Original filename completion.](http://1.bp.blogspot.com/_ci2yBnqzJgM/TD1O5_bOQ2I/AAAAAAAAADE/vHf9Xg_mrTI/s1600/filename_complete.png)
 
+Register completion.
+-----------
+![Register completion.](http://1.bp.blogspot.com/_ci2yBnqzJgM/TD1Pel4fomI/AAAAAAAAADk/YsAxF8i6r3w/s1600/register_complete.png)
 
+Omni completion.
+----------------
+![Omni completion.](http://2.bp.blogspot.com/_ci2yBnqzJgM/TD1PTolkTBI/AAAAAAAAADU/knJ3eniuHWI/s1600/omni_complete.png)
 
+Completion with vimshell(http://github.com/Shougo/vimshell).
+------------------------------------------------------------
+![Completion with vimshell(http://github.com/Shougo/vimshell).](http://1.bp.blogspot.com/_ci2yBnqzJgM/TD1PLfdQrwI/AAAAAAAAADM/2pSFRTHwYOY/s1600/neocomplcache_with_vimshell.png)
 
+Vim completion
+------------------------------------------------------------
+![Vim completion.](http://1.bp.blogspot.com/_ci2yBnqzJgM/TD1PfKTlwnI/AAAAAAAAADs/nOGWTRLuae8/s1600/vim_complete.png)
 
+Setting examples
 
+```vim
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
@@ -102,7 +94,6 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-"neo compcache shit
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 smap <C-k>     <Plug>(neocomplcache_snippets_expand)
@@ -114,7 +105,7 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-"inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -149,3 +140,4 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+```
