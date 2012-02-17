@@ -59,11 +59,12 @@ set ofu=syntaxcomplete#Complete
 :highlight Search ctermbg=none ctermfg=white cterm=underline
 
 " rvm support
-set shell=/bin/zsh
+set shell=/bin/sh
 
 " reload .vimrc
 nnoremap <leader>sv :so $MYVIMRC<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+
 
 " vimrc.local
 if filereadable(expand("~/.vimrc.local"))
