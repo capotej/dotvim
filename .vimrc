@@ -6,12 +6,14 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 set autoindent
+set autoread
 set showmode
 set hidden
 set cursorline
 set ttyfast
 set ruler
 set laststatus=2
+set colorcolumn=80
 
 "" Whitespace
 set nowrap                      " don't wrap lines
