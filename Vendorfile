@@ -15,8 +15,6 @@ folder '.vim/bundle/vim-powerline', 'https://github.com/Lokaltog/vim-powerline.g
 folder '.vim/bundle/vim-syntastic', 'https://github.com/scrooloose/syntastic.git'
 folder '.vim/bundle/vim-conque', 'https://github.com/rson/vim-conque.git'
 folder '.vim/bundle/vim-scala', 'https://github.com/derekwyatt/vim-scala.git'
-folder '.vim/bundle/vim-neocomplcache', 'https://github.com/Shougo/neocomplcache.git'
 folder '.vim/bundle/vim-matchit', 'https://github.com/tsaleh/vim-matchit.git'
 folder '.vim/bundle/delimitMate', 'https://github.com/Raimondi/delimitMate.git'
 folder '.vim/bundle/supertab', 'https://github.com/ervandew/supertab.git'
-
