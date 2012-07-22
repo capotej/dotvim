@@ -13,7 +13,6 @@ set cursorline
 set ttyfast
 set ruler
 set laststatus=2
-set colorcolumn=80
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -79,6 +78,6 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " ctags
-set tags=.tags,gems.tags,.gems.tags
+set tags=.tags,gems.tags,.gems.tags,/Users/cburnett/dev/birdcage/.tags
 noremap <leader>pt :!ctags -RV --languages=ruby -f .gems.tags `gem env gemdir` && ctags -f .tags -RV . <cr>
 
