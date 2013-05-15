@@ -272,7 +272,6 @@ module CommandT
         'Delete'                => '<Del>',
         'AcceptSelection'       => '<CR>',
         'AcceptSelectionSplit'  => ['<C-CR>', '<C-s>'],
-        'AcceptSelectionTab'    => '<C-t>',
         'AcceptSelectionVSplit' => '<C-v>',
         'ToggleFocus'           => '<Tab>',
         'Cancel'                => ['<C-c>', '<Esc>'],
